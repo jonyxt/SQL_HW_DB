@@ -16,7 +16,7 @@ WHERE singer_name NOT LIKE '% %';
 
 -- 5. Название треков, которые содержат слово «мой» или «my».
 SELECT track_name FROM tracks
-WHERE LOWER(track_name) LIKE '%my%' OR LOWER(track_name) LIKE '%мой%';
+WHERE string_to_array(LOWER(track_name), ' ') && ARRAY['my', 'мой'];
 
 -- 6. Количество исполнителей в каждом жанре.
 SELECT g.genre_name, COUNT(sg.singer_id) AS singer_count
@@ -56,7 +56,7 @@ WHERE asg.singer_id = 2;
 SELECT a.album_name FROM albums a 
 JOIN albumssingers als ON a.album_id = als.album_id
 JOIN singersgenres sg ON als.singer_id = sg.singer_id 
-GROUP BY a.album_id, a.album_name 
+GROUP BY a.album_id, a.album_name, als.singer_id 
 HAVING COUNT(DISTINCT sg.genre_id ) > 1;
 
 -- 12. Наименования треков, которые не входят в сборники.

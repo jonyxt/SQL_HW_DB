@@ -26,3 +26,11 @@ VALUES ('Best Rock Classics', '2010-01-01'), ('Pop Legends', '2015-01-01'), ('Ja
 
 INSERT INTO collectiontracks (collection_id, track_id)
 VALUES (1, 1), (1, 2), (2, 3), (2, 4), (3, 5), (3, 6), (4, 1), (4, 4), (4, 5);
+
+INSERT INTO tracks (album_id, track_name, track_length)
+VALUES (1, 'Mystical Dreams', 245), (1, 'СамыйГрех', 200),
+    (2, 'Myth Generator', 230), (2, 'Rhythm of MyHeart', 260),
+    (3, 'AwayMyWay', 190), (3, 'МойПутьДомой', 210), 
+    (4, 'Mysterious River', 220), (4, 'ДомойAgain', 205), 
+    (5, 'Sands of Mystery', 250), (5, 'МойОазис', 198),
+    (6, 'MyFahrenheit Rising', 240), (6, 'СамыйСвет', 215);
